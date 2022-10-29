@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Zhang Qin</title>
+    <style>
+        :root {
+            --cube: 4rem;
+        }
+
+        html {
+            font-size: 8px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0;
+            background-color: #dedede;
+        }
+
+        .main {
+            width: calc(var(--cube) * 3);
+            transform: rotateX(45deg) rotateZ(45deg);
+            transform-style: preserve-3d;
+        }
+
+        .cube, .cube:after, .cube:before {
+            height: var(--cube);
+            width: var(--cube);
+        }
+
+        .cube:after, .cube:before {
+            content: '';
+            position: absolute;
+        }
+
+        .cube {
+            float: left;
+            background-color: #05afd1;
+            transform-style: preserve-3d;
+            transition: .25s;
+            box-shadow: 14rem 14rem 1.4rem rgba(0, 0, 0, .1);
+            animation: cube 1s infinite;
+        }
+
+        .cube:after {
+            background-color: #049dbc;
+            transform: rotateX(-90deg) translateY(var(--cube));
+            transform-origin: 100% 100%;
+        }
+
+        .cube:before {
+            background-color: #048ca7;
+            transform: rotateY(90deg) translateX(var(--cube));
+            transform-origin: 100% 0;
+        }
+
+        .cube:nth-child(1) {
+            animation-delay: .05s;
+        }
+
+        .cube:nth-child(2) {
+            animation-delay: .1s;
+        }
+
+        .cube:nth-child(3) {
+            animation-delay: .15s;
+        }
+
+        .cube:nth-child(4) {
+            animation-delay: .2s;
+        }
+
+        .cube:nth-child(5) {
+            animation-delay: .25s;
+        }
+
+        .cube:nth-child(6) {
+            animation-delay: .3s;
+        }
+
+        .cube:nth-child(7) {
+            animation-delay: .35s;
+        }
+
+        .cube:nth-child(8) {
+            animation-delay: .4s;
+        }
+
+        .cube:nth-child(9) {
+            animation-delay: .45s;
+        }
+
+        @keyframes cube {
+            50% {
+                transform: translateZ(8rem);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+</div>
+</body>
+</html>
